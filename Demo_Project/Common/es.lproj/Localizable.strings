@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Demo_Project
+
+  Created by Tradesocio on 13/04/22.
+  
+*/
+
+"lblMainHeader" = "Disfruta tu vida";
+"lblDescHeader" = "deja que tu riqueza haga el trabajo por ti.";
+"btnTryNow" = "Probar ahora";
+"lblWelcome" = "Bienvenido a invertir ahora";
+"lblLogin" = "Ingrese a su cuenta";
+"email" = "Email";
+"Password" = "Clave";
+"ForgotPassword" = "Has olvidado tu contraseña";
+"Login" = "acceso";
+"NoAcc" = "¿No tienes una cuenta?";
+"copyRight" = "Copyright @ 2022 Bambú. Todos los derechos reservados.";

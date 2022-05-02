@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4KB-df-0uF"; */
+"4KB-df-0uF.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8C6-by-Vnq"; */
+"8C6-by-Vnq.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HTa-2x-wl0"; */
+"HTa-2x-wl0.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "LAi-yf-I4r"; */
+"LAi-yf-I4r.placeholder" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Oaw-Tz-ZpJ"; */
+"Oaw-Tz-ZpJ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "W9z-ij-3Em"; */
+"W9z-ij-3Em.text" = "Don't have an account?";
+
+/* Class = "UISegmentedControl"; aYq-1W-ez7.segmentTitles[0] = "English"; ObjectID = "aYq-1W-ez7"; */
+"aYq-1W-ez7.segmentTitles[0]" = "English";
+
+/* Class = "UISegmentedControl"; aYq-1W-ez7.segmentTitles[1] = "Hindi"; ObjectID = "aYq-1W-ez7"; */
+"aYq-1W-ez7.segmentTitles[1]" = "Hindi";
+
+/* Class = "UISegmentedControl"; aYq-1W-ez7.segmentTitles[2] = "Chinese"; ObjectID = "aYq-1W-ez7"; */
+"aYq-1W-ez7.segmentTitles[2]" = "Chinese";
+
+/* Class = "UISegmentedControl"; aYq-1W-ez7.segmentTitles[3] = "spanish"; ObjectID = "aYq-1W-ez7"; */
+"aYq-1W-ez7.segmentTitles[3]" = "spanish";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dn8-Ub-Omm"; */
+"dn8-Ub-Omm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mMr-ws-5xC"; */
+"mMr-ws-5xC.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tfv-24-bLg"; */
+"tfv-24-bLg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wBJ-Yo-zMG"; */
+"wBJ-Yo-zMG.text" = "Label";

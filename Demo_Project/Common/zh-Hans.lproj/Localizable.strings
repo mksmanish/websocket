@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Demo_Project
+
+  Created by Tradesocio on 13/04/22.
+  
+*/
+"lblMainHeader" = "享受你的生活";
+"lblDescHeader" = "让您的财富为您工作";
+"btnTryNow" = "现在试试";
+"lblWelcome" = "欢迎投资";
+"lblLogin" = "登录到您的帐户";
+"email" = "电子邮件";
+"Password" = "密码";
+"ForgotPassword" = "忘记密码";
+"Login" = "登录";
+"NoAcc" = "没有帐户?";
+"copyRight" = "版权所有@ 2022 班布。保留所有权利";

@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Demo_Project
+
+  Created by Tradesocio on 13/04/22.
+  
+*/
+
+"lblMainHeader" = "जीवन का आनंद लो";
+"lblDescHeader" = "तेरा धन तेरा काम करे।";
+"btnTryNow" = "अब कोशिश करो";
+"lblWelcome" = "निवेश करने के लिए आपका स्वागत है";
+"lblLogin" = "अपने अकाउंट में लॉग इन करें";
+"email" = "ईमेल";
+"Password" = "पासवर्ड";
+"ForgotPassword" = "पासवर्ड भूल गए";
+"Login" = "लॉग इन करें";
+"NoAcc" = "खाता नहीं है?";
+"copyRight" = "कॉपीराइट @ 2022 बंबू। सर्वाधिकार सुरक्षित।";
