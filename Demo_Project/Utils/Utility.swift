@@ -258,22 +258,39 @@ class Utility : NSObject {
     ///   - name: name of image
     @objc func setSVG(imgView : UIImageView , name : String)
     {
-        let path = Bundle.main.path(forResource: name, ofType: "svg") ?? ""
-        if FileManager.default.fileExists(atPath: path) {
-            let url = NSURL(string: path)
-            do {
-                let data = try Data(contentsOf: url! as URL)
-                let receivedIcon: SVGKImage = SVGKImage(data: data)
-                let img = receivedIcon.uiImage
-                imgView.image = img
-                imgView.contentMode = .scaleAspectFit
-            }catch let error {
-                print(error.localizedDescription)
-            }
-           
-        }
+//        let path = Bundle.main.path(forResource: name, ofType: "svg") ?? ""
+//        if FileManager.default.fileExists(atPath: path) {
+//            let url = NSURL(string: path)
+//            do {
+//
+//                let data = try Data(contentsOf: url! as URL)
+//                let receivedIcon: SVGKImage = SVGKImage(data: data)
+//                let img = receivedIcon.uiImage
+//                imgView.image = img
+//                imgView.contentMode = .scaleAspectFit
+//            }catch let error {
+//                print(error.localizedDescription)
+//            }
+//
+//        }
+//
+//    }
+    
+    let path = Bundle.main.path(forResource: name, ofType: "svg")
+    do{
+        
+        let svgData = try String(contentsOfFile: path!)
+        let d = svgData.data(using: .utf8)
+        let receivedIcon: SVGKImage = SVGKImage(data: d)
+        let img = receivedIcon.uiImage
+        imgView.image = img
+        imgView.contentMode = .scaleAspectFit
         
     }
+    catch let error{
+        print("Error",error.localizedDescription)
+    }
+}
     
 
 }

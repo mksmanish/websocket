@@ -45,25 +45,25 @@ class NetworkLayer {
         urlRequest.httpMethod = "post"
         urlRequest.httpBody = requestBody
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
-        urlRequest.addValue(Constants.kToken, forHTTPHeaderField: "Authorization")
+     //   urlRequest.addValue(Constants.kToken, forHTTPHeaderField: "Authorization")
         
         if Utility.shared.isInternetAvailable(){
-            print("url hitting->\(urlRequest)")
-              do {
-                   let result = try JSONSerialization.jsonObject(with: requestBody, options: .mutableContainers)
-                   print("param passed->\(result)")
-                  
-                } catch let myJSONError {
-                    print(myJSONError.localizedDescription)
-               }
+         print("url hitting->\(urlRequest)")
+//              do {
+//                   let result = try JSONSerialization.jsonObject(with: requestBody, options: .mutableContainers)
+//                  print("param passed->\(result)")
+//                  
+//                } catch let myJSONError {
+//                    print(myJSONError.localizedDescription)
+//               }
                
             URLSession.shared.dataTask(with: urlRequest) { (data, httpUrlResponse, error) in
                 
                 if(data != nil && data?.count != 0)
                 {
                     do {
-                        let result = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                         print("result->\(result)")
+                        let result = try JSONDecoder().decode(T.self ,from:data!)
+                        completionHandler(result)
                         
                       } catch let myJSONError {
                           print(myJSONError.localizedDescription)

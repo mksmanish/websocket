@@ -34,19 +34,18 @@ class LoginViewController: BaseViewController{
     //MARK:- Vraible Declaration
     let theme = ThemeManager.currentTheme()
     var ws = WebSocket()
+    var loginModel = LoginViewModel()
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        echoTest()
+      //  echoTest()
         setupController()
       //  requestusingAlamofire()
       //  postRequestusingURLsession()
   
         self.view.backgroundColor = theme.backgroundColor
-     
-        
     }
     
     func setupController() {
@@ -77,7 +76,7 @@ class LoginViewController: BaseViewController{
         btnCopyRight.setLabelStyle(textColor: FontManager.shared.convertHexColor(name: ThemeConstant.FontColorWhite), text: Constants.copyRight)
         
         // images
-        Utility.shared.setSVG(imgView: imgLogo, name: DMSVG.shared.main_logo.getIcon())
+        Utility.shared.setSVG(imgView: imgLogo, name: DMSVG.shared.logo.getIcon())
        
     }
     
@@ -140,13 +139,19 @@ class LoginViewController: BaseViewController{
         btnCopyRight.text = "copyRight".localizableString(loc: strlen)
         btnForgotPassword.setTitle("ForgotPassword".localizableString(loc: strlen), for:.normal)
        
-      
     }
     
     @IBAction func btnloginValid(_ sender: UIButton) {
        
-        if txtEmail.text == "ma@gmail.com" && txtPassword.text == "1234" {
-            self.goToEmployePage()
+        if txtEmail.text == "1stdec21@mailinator.com" && txtPassword.text == "Trade@123" {
+          
+                self.loginModel.LoginIn { result in
+                    if result == true{
+                      //  sleep(5)
+                        self.goToEmployePage()
+                    }
+                }
+            
         }else{
             showToast(message: "Please enter correct credentails", font: .systemFont(ofSize: 15.0))
         }

@@ -120,7 +120,7 @@ class Socketservice{
                         
                         if let jsonDic = json as? Dictionary<String,Any>{
                             socketGC1Model = MarketWatchModel(jsonDic)
-                         //   print(socketGC1Model?.quotesStream)
+                            print(jsonDic)
                             if socketGC1Model?.reason == "VALID"{
 //                                print(socketGC1Model?.userName ?? 0)
 //                                print(socketGC1Model?.noOfSymbols ?? 0)

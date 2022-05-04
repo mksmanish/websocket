@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>pine</key>
+	<string>pine</string>
+	<key>logo</key>
+	<string>logo</string>
 	<key>main_logo</key>
 	<string>main_logo</string>
 </dict>

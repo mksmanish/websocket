@@ -15,6 +15,8 @@ class DMSVG: NSObject {
     
     //MARK:- Pre login
     let main_logo = "main_logo"
+    let logo = "logo"
+    let pine = "pine"
     
     
 }
