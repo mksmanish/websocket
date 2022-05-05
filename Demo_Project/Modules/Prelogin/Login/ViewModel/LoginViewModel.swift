@@ -7,33 +7,25 @@
 
 import Foundation
 
-enum UserValidationState {
-    case Valid
-    case Invalid(String)
-}
+
 final class LoginViewModel {
-    private let minUsernameLength = 4
-    private let minPasswordLength = 5
-    private var user = User(username: "manish", password: "1234")
     var errormsg:ObservabObjec<String> = ObservabObjec("")
     
-    func validate() -> Bool {
-        if user.username.isEmpty || user.password.isEmpty {
-            self.errormsg = ObservabObjec("Username and password are required.")
-            return false
+    func txtHandler(model:userModel) -> (Bool,String) {
+        var status = true
+        var error = ""
+        if model.userEmail?.isEmpty ?? false || model.password?.isEmpty ?? false{
+            status = false
+            error = "please enter credentails"
         }
-        
-        if user.username.count < minUsernameLength {
-            self.errormsg = ObservabObjec("Username and password are required.")
-            return false
+        if model.userEmail != "1stdec21@mailinator.com" || model.password
+            != "Trade@123"{
+            status = false
+            error = "please enter  valid credentails"
         }
-        
-        if user.password.count < minPasswordLength {
-            self.errormsg = ObservabObjec("Username and password are required.")
-            return false
-        }
-        return true
+        return (status,error)
     }
+    
     
     func LoginIn(complication:@escaping(Bool) -> ()) {
         

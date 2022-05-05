@@ -30,11 +30,11 @@ class LoginViewController: BaseViewController{
     @IBOutlet var imgLogo: UIImageView!
     @IBOutlet weak var seg: UISegmentedControl!
     
-    
     //MARK:- Vraible Declaration
     let theme = ThemeManager.currentTheme()
     var ws = WebSocket()
     var loginModel = LoginViewModel()
+    var params = [String:Any]()
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
@@ -143,17 +143,18 @@ class LoginViewController: BaseViewController{
     
     @IBAction func btnloginValid(_ sender: UIButton) {
        
-        if txtEmail.text == "1stdec21@mailinator.com" && txtPassword.text == "Trade@123" {
-          self.loginModel.LoginIn { result in
-                    if result == true{
-                        self.goTomarket()
-                    }
+        params["userEmail"] = txtEmail.text
+        params["password"] = txtPassword.text
+        let (status,error) =  loginModel.txtHandler(model: userModel.init(params:params))
+        if status{
+            self.loginModel.LoginIn { result in
+                if result == true{
+                    self.goTomarket()
                 }
-            
+            }
         }else{
-            showToast(message: "Please enter correct credentails", font: .systemFont(ofSize: 15.0))
+            showToast(message:error, font: .systemFont(ofSize: 15.0))
         }
-      
     }
     
     @IBAction func btnTryNow(_ sender: UIButton) {

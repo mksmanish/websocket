@@ -41,3 +41,13 @@ struct User {
     let password:String
 }
 
+class userModel {
+    var userEmail:String?
+    var password: String?
+    
+    init(params:[String:Any]) {
+        self.userEmail = params["userEmail"] as? String
+        self.password =  params["password"] as? String
+    }
+}
+
