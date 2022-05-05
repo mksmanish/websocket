@@ -32,7 +32,7 @@ public class ActivityLoader{
         let imageView = UIImageView()
         imageView.frame = CGRect(x: (overlayView?.bounds.width)! / 2 - 40, y: (overlayView?.bounds.height)! / 2 - 40, width: 80, height: 80)
         imageView.backgroundColor = UIColor.clear
-        imageView.loadGif(name: "Rounded blocks")
+        imageView.loadGif(name: "redSpinner")
         overlayView?.addSubview(imageView)
     }
     

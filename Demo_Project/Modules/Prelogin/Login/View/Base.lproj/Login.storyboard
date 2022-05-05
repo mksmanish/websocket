@@ -70,7 +70,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8C6-by-Vnq">
                                                                 <rect key="frame" x="10" y="5" width="62.5" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,7 +78,7 @@
                                                             <constraint firstItem="8C6-by-Vnq" firstAttribute="top" secondItem="yt9-gg-nc6" secondAttribute="top" constant="5" id="8lL-eK-2PO"/>
                                                             <constraint firstItem="8C6-by-Vnq" firstAttribute="leading" secondItem="yt9-gg-nc6" secondAttribute="leading" constant="10" id="C4u-hO-PkT"/>
                                                             <constraint firstAttribute="bottom" secondItem="8C6-by-Vnq" secondAttribute="bottom" constant="5" id="o5Y-uk-oIN"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8C6-by-Vnq" secondAttribute="trailing" symbolic="YES" id="vWy-aC-WII"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8C6-by-Vnq" secondAttribute="trailing" constant="20" symbolic="YES" id="vWy-aC-WII"/>
                                                             <constraint firstItem="8C6-by-Vnq" firstAttribute="centerY" secondItem="yt9-gg-nc6" secondAttribute="centerY" id="vjv-7W-q5s"/>
                                                         </constraints>
                                                     </view>

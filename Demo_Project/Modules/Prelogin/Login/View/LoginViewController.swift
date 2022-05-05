@@ -44,7 +44,6 @@ class LoginViewController: BaseViewController{
         setupController()
       //  requestusingAlamofire()
       //  postRequestusingURLsession()
-  
         self.view.backgroundColor = theme.backgroundColor
     }
     
@@ -147,8 +146,10 @@ class LoginViewController: BaseViewController{
         params["password"] = txtPassword.text
         let (status,error) =  loginModel.txtHandler(model: userModel.init(params:params))
         if status{
+            ActivityLoader.shared.showloader(view: view)
             self.loginModel.LoginIn { result in
                 if result == true{
+                    ActivityLoader.shared.hideloader()
                     self.goTomarket()
                 }
             }

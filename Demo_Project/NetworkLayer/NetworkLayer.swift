@@ -45,18 +45,18 @@ class NetworkLayer {
         urlRequest.httpMethod = "post"
         urlRequest.httpBody = requestBody
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
-     //   urlRequest.addValue(Constants.kToken, forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(UserDefaults.standard.string(forKey: "kToken") ?? "", forHTTPHeaderField: "Authorization")
         
         if Utility.shared.isInternetAvailable(){
-         print("url hitting->\(urlRequest)")
-//              do {
-//                   let result = try JSONSerialization.jsonObject(with: requestBody, options: .mutableContainers)
-//                  print("param passed->\(result)")
-//                  
-//                } catch let myJSONError {
-//                    print(myJSONError.localizedDescription)
-//               }
-               
+            print("url hitting->\(urlRequest)")
+            do {
+                let result = try JSONSerialization.jsonObject(with: requestBody, options: .mutableContainers)
+                print("param passed->\(result)")
+                
+            } catch let myJSONError {
+                print(myJSONError.localizedDescription)
+            }
+            
             URLSession.shared.dataTask(with: urlRequest) { (data, httpUrlResponse, error) in
                 
                 if(data != nil && data?.count != 0)
@@ -65,9 +65,11 @@ class NetworkLayer {
                         let result = try JSONDecoder().decode(T.self ,from:data!)
                         completionHandler(result)
                         
-                      } catch let myJSONError {
-                          print(myJSONError.localizedDescription)
-                     }
+                        
+                    } catch let myJSONError {
+                        print(myJSONError.localizedDescription)
+                        
+                    }
                 }
             }.resume()
         }else{
@@ -79,7 +81,7 @@ class NetworkLayer {
     // for the  Get request
     func getApiRESULT<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler:@escaping(_ result: T)-> Void,failure: @escaping (String)->Void)
     {
-      
+        
         var urlRequest = URLRequest(url: requestUrl)
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
         urlRequest.addValue(Constants.kToken, forHTTPHeaderField: "Authorization")
@@ -89,7 +91,7 @@ class NetworkLayer {
                 {
                     //parse the responseData here
                     let decoder = JSONDecoder()
-                  
+                    
                     do {
                         let result = try decoder.decode(T.self, from: responseData!)
                         _=completionHandler(result)
