@@ -52,6 +52,9 @@
 		8E36F50727FCFBF70099C275 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36F50427FCFBF70099C275 /* UIColorExtension.swift */; };
 		8E3B42132823D02F00236E94 /* redSpinner.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B42122823D02F00236E94 /* redSpinner.gif */; };
 		8E3B42162823D28100236E94 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B42152823D28100236E94 /* Login.swift */; };
+		8E3B42182823F85F00236E94 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B42172823F85F00236E94 /* UserModel.swift */; };
+		8E3B421A2823FF5E00236E94 /* EmployeeViewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51237F2817CC3F00568E3B /* EmployeeViewAPI.swift */; };
+		8E3B421C282401B400236E94 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B421B282401B400236E94 /* LoginAPI.swift */; };
 		8E40B61028228CA900817DD5 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40B60F28228CA900817DD5 /* SignIn.swift */; };
 		8E50D0B227FD659D007F9621 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50D0B127FD659D007F9621 /* Reachability.swift */; };
 		8E50D0B727FD86BB007F9621 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50D0B627FD86BB007F9621 /* APIClient.swift */; };
@@ -63,7 +66,6 @@
 		8E50D0CA27FD952A007F9621 /* ErrorHai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50D0C927FD952A007F9621 /* ErrorHai.swift */; };
 		8E50D0CC27FDEA99007F9621 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50D0CB27FDEA98007F9621 /* NetworkLayer.swift */; };
 		8E50D0D127FDF925007F9621 /* CompanyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50D0D027FDF925007F9621 /* CompanyData.swift */; };
-		8E5123802817CC3F00568E3B /* EmployeeViewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51237F2817CC3F00568E3B /* EmployeeViewAPI.swift */; };
 		8E51238F2817F03D00568E3B /* EmployeeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51238E2817F03D00568E3B /* EmployeeViewTest.swift */; };
 		8E51239828180E6C00568E3B /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51239728180E6C00568E3B /* LoginUITests.swift */; };
 		8E51239A28180E6C00568E3B /* Demo_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51239928180E6C00568E3B /* Demo_ProjectUITestsLaunchTests.swift */; };
@@ -159,6 +161,8 @@
 		8E36F50427FCFBF70099C275 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8E3B42122823D02F00236E94 /* redSpinner.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = redSpinner.gif; sourceTree = "<group>"; };
 		8E3B42152823D28100236E94 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		8E3B42172823F85F00236E94 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8E3B421B282401B400236E94 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		8E40B60F28228CA900817DD5 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		8E50D0B127FD659D007F9621 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8E50D0B627FD86BB007F9621 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -378,12 +382,6 @@
 				8E303AFB27FC389600BB2F8D /* Fonts.swift */,
 				8E25103327FC42A100501F45 /* FontAdv.swift */,
 				8E25103527FC437900501F45 /* FontManager.swift */,
-				8EC686C027FFC4AD00EAFBBA /* IconsNew.plist */,
-				8E25104727FC620100501F45 /* ColorCode.plist */,
-				8E25103927FC454B00501F45 /* iPhone.plist */,
-				8E25104527FC509400501F45 /* iPhone12.plist */,
-				8E25103827FC454B00501F45 /* iPhone6.plist */,
-				8E25103727FC454B00501F45 /* iPhonePlus.plist */,
 				8EAC2D26281E89F2009CFBC9 /* BaseViewController.swift */,
 				8E50D0BA27FD8783007F9621 /* CustomError.swift */,
 				8E50D0BC27FD87C0007F9621 /* Constants.swift */,
@@ -393,6 +391,12 @@
 				8E3697FB2800159A00E0E4B7 /* ActivityIndicator.swift */,
 				8E720777280584B100BA3FBE /* ToastMessage.swift */,
 				8E194BE3281517F70091BEC8 /* ObservableOjects.swift */,
+				8EC686C027FFC4AD00EAFBBA /* IconsNew.plist */,
+				8E25104727FC620100501F45 /* ColorCode.plist */,
+				8E25103927FC454B00501F45 /* iPhone.plist */,
+				8E25104527FC509400501F45 /* iPhone12.plist */,
+				8E25103827FC454B00501F45 /* iPhone6.plist */,
+				8E25103727FC454B00501F45 /* iPhonePlus.plist */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -440,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				8E3B42152823D28100236E94 /* Login.swift */,
+				8E3B421B282401B400236E94 /* LoginAPI.swift */,
 			);
 			path = LoginTestCase;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				8E50D0D027FDF925007F9621 /* CompanyData.swift */,
 				8E13851727FE6F030053C9C3 /* AccountResponse.swift */,
 				8E40B60F28228CA900817DD5 /* SignIn.swift */,
+				8E3B42172823F85F00236E94 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -838,6 +844,7 @@
 				8E50D0B227FD659D007F9621 /* Reachability.swift in Sources */,
 				8E25103427FC42A100501F45 /* FontAdv.swift in Sources */,
 				8E50D0C827FD948A007F9621 /* ErrorHandler.swift in Sources */,
+				8E3B42182823F85F00236E94 /* UserModel.swift in Sources */,
 				8E3697FC2800159A00E0E4B7 /* ActivityIndicator.swift in Sources */,
 				8E40B61028228CA900817DD5 /* SignIn.swift in Sources */,
 				8E50D0C327FD9125007F9621 /* DepositeResponse.swift in Sources */,
@@ -878,9 +885,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3B421C282401B400236E94 /* LoginAPI.swift in Sources */,
+				8E3B421A2823FF5E00236E94 /* EmployeeViewAPI.swift in Sources */,
 				8E3B42162823D28100236E94 /* Login.swift in Sources */,
 				8E51238F2817F03D00568E3B /* EmployeeViewTest.swift in Sources */,
-				8E5123802817CC3F00568E3B /* EmployeeViewAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

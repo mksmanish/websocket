@@ -1,17 +1,14 @@
 //
-//  Demo_ProjectTests.swift
+//  LoginAPI.swift
 //  Demo_ProjectTests
 //
-//  Created by Tradesocio on 26/04/22.
+//  Created by Tradesocio on 05/05/22.
 //
 
 import XCTest
 @testable import Demo_Project
 
-class EmployeeViewAPI: XCTestCase {
-
-    
-    
+class LoginAPI: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -20,19 +17,20 @@ class EmployeeViewAPI: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testEmployeeAPI() {
+    func testLoginAPI() {
         
-        let expectation = self.expectation(description: "employeeApI")
-        let employeeAPI = EmployeeViewModel()
-        employeeAPI.fetchEmployees { (success) in
+        let expectation = self.expectation(description: "LoginApI")
+        let LoginModel = LoginViewModel()
+        LoginModel.LoginIn { (result,success) in
+            XCTAssertNotNil(result)
             XCTAssertTrue(success)
+            XCTAssertEqual(result.message, "Success")
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
         
     }
     
-
-
-    
 }
+
+ 

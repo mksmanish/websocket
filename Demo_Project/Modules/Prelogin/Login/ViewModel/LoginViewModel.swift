@@ -14,20 +14,24 @@ final class LoginViewModel {
     func txtHandler(model:userModel) -> (Bool,String) {
         var status = true
         var error = ""
-        if model.userEmail?.isEmpty ?? false || model.password?.isEmpty ?? false{
+        if model.userEmail?.isEmpty ?? false{
             status = false
-            error = "please enter credentails"
+            error = "please enter Email"
+        }
+        if model.password?.isEmpty ?? false{
+            status = false
+            error = "please enter password"
         }
         if model.userEmail != "1stdec21@mailinator.com" || model.password
             != "Trade@123"{
             status = false
-            error = "please enter  valid credentails"
+            error = "please enter valid credentails"
         }
         return (status,error)
     }
     
     
-    func LoginIn(complication:@escaping(Bool) -> ()) {
+    func LoginIn(complication:@escaping(SignIn,Bool) -> ()) {
         
         let url = URL(string: "https://nxcloud.tradesocio.com/user/api/v1/login/signin")
         let request = ["signin_data":["email": "1stdec21@mailinator.com","password": "Trade@123"]]
@@ -36,11 +40,12 @@ final class LoginViewModel {
             NetworkLayer.shared.postApiData(requestUrl: url!, requestBody: encodeData, parseClassName: SignIn.self) { result in
                 print(result.message ?? "")
                 UserDefaults.standard.set(result.token, forKey: "kToken")
-                complication(true)
+                complication(result,true)
             }
             
         }catch(let error){
             print("Error = \(error.localizedDescription)")
+           
         }
       
     }

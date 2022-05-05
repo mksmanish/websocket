@@ -54,9 +54,41 @@ class Login: XCTestCase {
         var params = [String:Any]()
         params["userEmail"] = "1stdec21@mailinator.com"
         params["password"] = "Trade@123"
-        let checck = userModel(params: params)
-        XCTAssertTrue(checck.isvalidCreds())
+        let check = userModel(params: params)
+        XCTAssertTrue(check.isvalidCreds())
     }
+    
+    func testToastPresented() {
+        var params = [String:Any]()
+        params["userEmail"] = ""
+        params["password"] = ""
+        let loginModel = LoginViewModel()
+        let (status,error) = loginModel.txtHandler(model: userModel(params: params))
+        XCTAssertFalse(status)
+        XCTAssertEqual(error, "please enter valid credentails")
+        
+    }
+    func testifUserEmailEmptyToastPresented() {
+        var params = [String:Any]()
+        params["userEmail"] = ""
+        params["password"] = "Trade@123"
+        let loginModel = LoginViewModel()
+        let (status,error) = loginModel.txtHandler(model: userModel(params: params))
+        XCTAssertFalse(status)
+        XCTAssertEqual(error, "please enter valid credentails")
+        
+    }
+    func testifpasswordEmptyToastPresented() {
+        var params = [String:Any]()
+        params["userEmail"] = "1stdec21@mailinator.com"
+        params["password"] = ""
+        let loginModel = LoginViewModel()
+        let (status,error) = loginModel.txtHandler(model: userModel(params: params))
+        XCTAssertFalse(status)
+        XCTAssertEqual(error, "please enter valid credentails")
+        
+    }
+    
     
     
 }
