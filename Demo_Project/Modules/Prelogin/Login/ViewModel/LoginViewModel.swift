@@ -17,20 +17,22 @@ final class LoginViewModel {
     private var user = User(username: "manish", password: "1234")
     var errormsg:ObservabObjec<String> = ObservabObjec("")
     
-    func validate() -> UserValidationState {
+    func validate() -> Bool {
         if user.username.isEmpty || user.password.isEmpty {
-            return .Invalid("Username and password are required.")
+            self.errormsg = ObservabObjec("Username and password are required.")
+            return false
         }
         
         if user.username.count < minUsernameLength {
-            return .Invalid("Username needs to be at least \(minUsernameLength) characters long.")
+            self.errormsg = ObservabObjec("Username and password are required.")
+            return false
         }
         
         if user.password.count < minPasswordLength {
-            return .Invalid("Password needs to be at least \(minPasswordLength) characters long.")
+            self.errormsg = ObservabObjec("Username and password are required.")
+            return false
         }
-        
-        return .Valid
+        return true
     }
     
     func LoginIn(complication:@escaping(Bool) -> ()) {

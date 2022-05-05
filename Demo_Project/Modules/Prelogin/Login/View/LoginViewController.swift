@@ -40,7 +40,7 @@ class LoginViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      //  echoTest()
+        socketsetup()
         setupController()
       //  requestusingAlamofire()
       //  postRequestusingURLsession()
@@ -144,11 +144,9 @@ class LoginViewController: BaseViewController{
     @IBAction func btnloginValid(_ sender: UIButton) {
        
         if txtEmail.text == "1stdec21@mailinator.com" && txtPassword.text == "Trade@123" {
-          
-                self.loginModel.LoginIn { result in
+          self.loginModel.LoginIn { result in
                     if result == true{
-                      //  sleep(5)
-                        self.goToEmployePage()
+                        self.goTomarket()
                     }
                 }
             
@@ -159,10 +157,10 @@ class LoginViewController: BaseViewController{
     }
     
     @IBAction func btnTryNow(_ sender: UIButton) {
-        self.goTomarket()
+        self.goToEmployePage()
     }
     
-    func echoTest(){
+    func socketsetup(){
         Socketservice.shared().SocketDataAPI() { (result,status)  in
             DispatchQueue.main.async {
                 if status == "Closed"{

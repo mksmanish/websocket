@@ -19,10 +19,13 @@ class BaseViewController: UIViewController {
     
     func goToEmployePage(){
         
-        let str = UIStoryboard(name: "Employee", bundle: nil)
-        let vc = str.instantiateViewController(withIdentifier: "EmployeeViewController") as! EmployeeViewController
-        self.present(vc, animated: true, completion: nil)
-        
+        DispatchQueue.main.async {
+            let str = UIStoryboard(name: "Employee", bundle: nil)
+            let vc = str.instantiateViewController(withIdentifier: "EmployeeViewController") as! EmployeeViewController
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+      
     }
     
     func goToTest(){
@@ -35,15 +38,16 @@ class BaseViewController: UIViewController {
     
     func goTomarket(){
         
-        let str = UIStoryboard(name: "MarketWatch", bundle: nil)
-        let vc = str.instantiateViewController(withIdentifier: "MarketWatchViewController") as! MarketWatchViewController
-        vc.marketValues = self.marketArr
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc, animated: true)
+        DispatchQueue.main.sync {
+            let str = UIStoryboard(name: "MarketWatch", bundle: nil)
+            let vc = str.instantiateViewController(withIdentifier: "MarketWatchViewController") as! MarketWatchViewController
+            vc.marketValues = self.marketArr
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    
         
     }
     
-    
-
 
 }
