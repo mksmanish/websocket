@@ -21,12 +21,19 @@ class EmployeeViewController: UIViewController ,UITableViewDelegate,UITableViewD
         self.tblViewEmp.dataSource = self
         self.tblViewEmp.delegate = self
         setupbinders()
+        fetchEmployee()
+        
+      
+    }
+    func fetchEmployee() {
+        ActivityLoader.shared.showloader(view: view)
         viewModel.fetchEmployees { success in
             if success == true{
-                print("api hit")
+                self.tblViewEmp.reloadData()
+                ActivityLoader.shared.hideloader()
             }
+           
         }
-      
     }
     
     func setupbinders() {

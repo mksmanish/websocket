@@ -59,7 +59,7 @@ class LoginViewController: BaseViewController{
         lblLogin.font = FontManager.shared.getSpecificFont(size: ThemeConstant.FontSizeS, fontName:"FontRobotoBold")
         lblLogin.setLabelStyle(textColor: ThemeConstant.grayColor, text: Constants.LoginToYourAccount)
         // button styleSet
-        btnTryNow.setButtonStyle(alpha: 1.0, userInteraction:true, cornerRadius: 10.0, backgroundColor: ThemeConstant.whiteColor, font:UIFont.boldSystemFont(ofSize: 20.0), titleColor: ThemeConstant.btnColor, layerBorderColor: .clear, borderWidth: 0, text: Constants.TryNow)
+        btnTryNow.setButtonStyle(alpha: 0.6, userInteraction:false, cornerRadius: 10.0, backgroundColor: ThemeConstant.whiteColor, font:UIFont.boldSystemFont(ofSize: 20.0), titleColor: ThemeConstant.btnColor, layerBorderColor: .clear, borderWidth: 0, text: Constants.TryNow)
         // Views
         btnLogin.setButtonStyle(alpha: 1.0, userInteraction: true, cornerRadius: 10.0, backgroundColor: theme.mainColor, font:UIFont.boldSystemFont(ofSize: 20.0), titleColor: ThemeConstant.whiteColor, layerBorderColor: .clear, borderWidth: 0, text: Constants.Login)
         
