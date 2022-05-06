@@ -10,7 +10,7 @@ import CarbonKit
 
 /// This class is used for watchWatch and its functionalities
 class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,cellclicked{
-   
+    
     //MARK:- IBOutlet Declaration
     @IBOutlet weak var tblViw: UITableView!
     
@@ -23,13 +23,10 @@ class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITable
         self.tblViw.register(UINib(nibName: CellIdentifiers.marketWatchCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.marketWatchCell)
         self.tblViw.dataSource = self
         self.tblViw.delegate = self
-        let items = ["Features", "Products", "About"]
-      
-        // Do any additional setup after loading the view.
     }
     
     
-    //MARK:- tableView datasources and delegates
+    //MARK: - tableView datasources and delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return marketValues.count
     }
@@ -43,38 +40,35 @@ class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITable
         cell.delegate = self
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView,
-                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
-        {
-            let BuyAction = UIContextualAction(style: .normal, title:  Constants.Buy, handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
-                success(true)
-            })
-            BuyAction.backgroundColor = .systemGreen
-
-            let SellAction = UIContextualAction(style: .normal, title:  Constants.Sell, handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
-                success(true)
-            })
-            SellAction.backgroundColor = .red
-
-            return UISwipeActionsConfiguration(actions: [SellAction,BuyAction])
-        }
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let BuyAction = UIContextualAction(style: .normal, title:  Constants.Buy, handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            success(true)
+        })
+        BuyAction.backgroundColor = .systemGreen
+        
+        let SellAction = UIContextualAction(style: .normal, title:  Constants.Sell, handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            success(true)
+        })
+        SellAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [SellAction,BuyAction])
+    }
     
-        func buttontapped(number: Int) {
-            let alert = UIAlertController(title: Constants.SymbolSubscription, message: Constants.SymbolSubscriptionMsg,preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: Constants.Cancel, style: UIAlertAction.Style.default, handler: { _ in
-                //Cancel Action
-            }))
-            alert.addAction(UIAlertAction(title: Constants.Confirm,
-                                          style: UIAlertAction.Style.default,
-                                          handler: {(_: UIAlertAction!) in
-            }))
-            self.present(alert, animated: true, completion: nil)
-       }
+    func buttontapped(number: Int) {
+        let alert = UIAlertController(title: Constants.SymbolSubscription, message: Constants.SymbolSubscriptionMsg,preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: Constants.Cancel, style: UIAlertAction.Style.default, handler: { _ in
+        }))
+        alert.addAction(UIAlertAction(title: Constants.Confirm,
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
-
+    
     @IBAction func button_logout(_ sender: Any) {
         let alert = UIAlertController(title: Constants.logout, message: Constants.logoutMsg,preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: Constants.Cancel, style: UIAlertAction.Style.default, handler: { _ in
@@ -92,14 +86,12 @@ class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITable
 }
 
 
-
-
 protocol cellclicked{
     func buttontapped(number:Int)
 }
 
 class marketWatchCell:UITableViewCell{
- 
+    
     @IBOutlet weak var symbol: UILabel!
     @IBOutlet weak var bid: UILabel!
     @IBOutlet weak var spread: UILabel!
@@ -118,6 +110,6 @@ class marketWatchCell:UITableViewCell{
         
     }
     
-   
+    
     
 }

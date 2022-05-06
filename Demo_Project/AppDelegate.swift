@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         window?.overrideUserInterfaceStyle = .light
         ThemeManager.applyTheme(theme: .theme1)
-        
+     //   Reachable.shared.startMonitoring()
         
         return true
     }

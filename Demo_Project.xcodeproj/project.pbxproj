@@ -69,6 +69,7 @@
 		8E51238F2817F03D00568E3B /* EmployeeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51238E2817F03D00568E3B /* EmployeeViewTest.swift */; };
 		8E51239828180E6C00568E3B /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51239728180E6C00568E3B /* LoginUITests.swift */; };
 		8E51239A28180E6C00568E3B /* Demo_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51239928180E6C00568E3B /* Demo_ProjectUITestsLaunchTests.swift */; };
+		8E70F6192824F011007DAF15 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70F6182824F010007DAF15 /* Rechability.swift */; };
 		8E720778280584B100BA3FBE /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E720777280584B100BA3FBE /* ToastMessage.swift */; };
 		8E72077C2806D95800BA3FBE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E72077E2806D95800BA3FBE /* Login.storyboard */; };
 		8E72078B2806DE7000BA3FBE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E72078D2806DE7000BA3FBE /* Localizable.strings */; };
@@ -180,6 +181,7 @@
 		8E51239528180E6C00568E3B /* Demo_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E51239728180E6C00568E3B /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		8E51239928180E6C00568E3B /* Demo_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E70F6182824F010007DAF15 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		8E720777280584B100BA3FBE /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		8E7207792806D8CE00BA3FBE /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8E72077A2806D90800BA3FBE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -356,7 +358,7 @@
 		8E303AE427FC35E000BB2F8D /* Demo_Project */ = {
 			isa = PBXGroup;
 			children = (
-				8E50D0CD27FDEB4B007F9621 /* NetworkLayer */,
+				8E70F61A28253B54007DAF15 /* SocketConnections */,
 				8E50D0BE27FD90B1007F9621 /* Modules */,
 				8E50D0B527FD85AE007F9621 /* Netowork */,
 				8E36F4FF27FCFBD40099C275 /* Extensions */,
@@ -397,6 +399,7 @@
 				8E25104527FC509400501F45 /* iPhone12.plist */,
 				8E25103827FC454B00501F45 /* iPhone6.plist */,
 				8E25103727FC454B00501F45 /* iPhonePlus.plist */,
+				8E70F6182824F010007DAF15 /* Rechability.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 		8E50D0B527FD85AE007F9621 /* Netowork */ = {
 			isa = PBXGroup;
 			children = (
+				8E50D0CD27FDEB4B007F9621 /* NetworkLayer */,
 				8E50D0B627FD86BB007F9621 /* APIClient.swift */,
 				8E50D0B827FD86E6007F9621 /* APIRouter.swift */,
 			);
@@ -559,6 +563,14 @@
 			path = Demo_ProjectUITests;
 			sourceTree = "<group>";
 		};
+		8E70F61A28253B54007DAF15 /* SocketConnections */ = {
+			isa = PBXGroup;
+			children = (
+				8EDFFAE7281A9F990003745C /* Socket.swift */,
+			);
+			path = SocketConnections;
+			sourceTree = "<group>";
+		};
 		8EC686BD27FFC3F400EAFBBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,7 +588,6 @@
 				8ED081E6281A239D00E935E8 /* Model */,
 				8ED081E7281A23AE00E935E8 /* View */,
 				8ED081E8281A23B600E935E8 /* ViewModel */,
-				8EDFFAE7281A9F990003745C /* Socket.swift */,
 			);
 			path = MarketWatch;
 			sourceTree = "<group>";
@@ -863,6 +874,7 @@
 				8E720778280584B100BA3FBE /* ToastMessage.swift in Sources */,
 				8EDFFAE8281A9F990003745C /* Socket.swift in Sources */,
 				8E36F4F527FCF4360099C275 /* Utility.swift in Sources */,
+				8E70F6192824F011007DAF15 /* Rechability.swift in Sources */,
 				8E303AE627FC35E000BB2F8D /* AppDelegate.swift in Sources */,
 				8E2E266E281A562A003B590C /* Dictionary+Extension.swift in Sources */,
 				8EAE415628043379002EAC6D /* ThemeManager.swift in Sources */,

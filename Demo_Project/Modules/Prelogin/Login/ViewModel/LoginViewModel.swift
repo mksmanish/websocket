@@ -7,8 +7,9 @@
 
 import Foundation
 
-
+///This class is for handling view model of login.
 final class LoginViewModel {
+    
     var errormsg:ObservabObjec<String> = ObservabObjec("")
     
     func txtHandler(model:userModel) -> (Bool,String) {
@@ -30,7 +31,6 @@ final class LoginViewModel {
         return (status,error)
     }
     
-    
     func LoginIn(complication:@escaping(SignIn,Bool) -> ()) {
         
         let url = URL(string: "https://nxcloud.tradesocio.com/user/api/v1/login/signin")
@@ -45,10 +45,10 @@ final class LoginViewModel {
             
         }catch(let error){
             print("Error = \(error.localizedDescription)")
-           
+            
         }
-      
+        
     }
-
+    
 }
 

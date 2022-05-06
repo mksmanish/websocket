@@ -13,11 +13,6 @@ struct AccountResponse : Codable {
     let message: String?
     let data: DataAccounts?
 }
-
-// DataClass.swift
-
-import Foundation
-
 // MARK: -  DataAccounts
 struct DataAccounts : Codable {
     let defaultAccountDetails: DefaultAccountDetails?
@@ -30,10 +25,6 @@ struct DataAccounts : Codable {
         case accounts = "accounts"
     }
 }
-
-// DefaultAccountDetails.swift
-
-import Foundation
 
 // MARK: - DefaultAccountDetails
 struct DefaultAccountDetails : Codable {

@@ -12,4 +12,9 @@ class ViewIdentifiers: NSObject {
     static let ViewController = "ViewController"
     
     
+    // cell Identifers
+    static let EmployeeCell = "EmployeeCell"
+    
+    
+    
 }

@@ -6,8 +6,9 @@
 //
 
 import Foundation
-
+/// model class for the login Controller
 class userModel {
+    // MARK: - userModel
     var userEmail:String?
     var password: String?
     
@@ -16,11 +17,13 @@ class userModel {
         self.password =  params["password"] as? String
     }
 }
-
 extension userModel {
+    
+    //MARK: - user Defined Funcctions
     func isValidCount() -> Bool {
         return userEmail!.count > 10
     }
+    
     func isValidUserEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)

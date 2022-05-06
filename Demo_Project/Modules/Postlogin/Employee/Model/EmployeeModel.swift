@@ -10,7 +10,7 @@ import Foundation
 struct EmployeeModel : Codable{
     let name, email, gender,status: String?
     let id:Int?
-   
+    
     
     enum codingKeys: String,CodingKey {
         case id = "id"

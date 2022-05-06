@@ -10,8 +10,6 @@ import XCTest
 
 class LoginUITests: XCTestCase {
 
-    
-
     func testlebelsValues() {
     
         let app = XCUIApplication()

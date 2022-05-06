@@ -17,18 +17,16 @@ class EmployeeViewController: UIViewController ,UITableViewDelegate,UITableViewD
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.tblViewEmp.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
+        self.tblViewEmp.register(UINib(nibName: ViewIdentifiers.EmployeeCell, bundle: nil), forCellReuseIdentifier: ViewIdentifiers.EmployeeCell)
         self.tblViewEmp.dataSource = self
         self.tblViewEmp.delegate = self
-        
+        setupbinders()
         viewModel.fetchEmployees { success in
             if success == true{
                 print("api hit")
             }
         }
-        sleep(5)
-        setupbinders()
-       
+      
     }
     
     func setupbinders() {
@@ -43,13 +41,14 @@ class EmployeeViewController: UIViewController ,UITableViewDelegate,UITableViewD
         
     }
     
+    //MARK: - tableView datasources and delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.employees.value.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tblViewEmp.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
+        let cell = tblViewEmp.dequeueReusableCell(withIdentifier: ViewIdentifiers.EmployeeCell, for: indexPath) as! EmployeeCell
         cell.employeeValue = viewModel.employees.value[indexPath.row]
         return cell
         
@@ -57,7 +56,7 @@ class EmployeeViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
 }
 
-
+///class for handling the employee table cell parameters
 class EmployeeCell: UITableViewCell {
     
     @IBOutlet weak var lblName: UILabel!
@@ -80,8 +79,6 @@ class EmployeeCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }

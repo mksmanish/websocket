@@ -11,7 +11,7 @@ import SwiftWebSocket
 /// This class is used for login with email and password.
 class LoginViewController: BaseViewController{
     
-    //MARK:- Outlet Declaration
+    //MARK: - Outlet Declaration
     @IBOutlet weak var lblMainHeader: UILabel!
     @IBOutlet weak var lblDescHeader: UILabel!
     @IBOutlet weak var btnTryNow: UIButton!
@@ -30,20 +30,20 @@ class LoginViewController: BaseViewController{
     @IBOutlet var imgLogo: UIImageView!
     @IBOutlet weak var seg: UISegmentedControl!
     
-    //MARK:- Vraible Declaration
+    //MARK: - Vraible Declaration
     let theme = ThemeManager.currentTheme()
     var ws = WebSocket()
     var loginModel = LoginViewModel()
     var params = [String:Any]()
     
-    //MARK:- View Life Cycle
+    //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         socketsetup()
         setupController()
-      //  requestusingAlamofire()
-      //  postRequestusingURLsession()
+        //  requestusingAlamofire()
+        //  postRequestusingURLsession()
         self.view.backgroundColor = theme.backgroundColor
     }
     
@@ -76,7 +76,7 @@ class LoginViewController: BaseViewController{
         
         // images
         Utility.shared.setSVG(imgView: imgLogo, name: DMSVG.shared.logo.getIcon())
-       
+        
     }
     
     func postRequestusingURLsession() {
@@ -112,6 +112,29 @@ class LoginViewController: BaseViewController{
         }
     }
     
+    
+    @IBAction func btnloginValid(_ sender: UIButton) {
+        
+        params["userEmail"] = txtEmail.text
+        params["password"] = txtPassword.text
+        let (status,error) =  loginModel.txtHandler(model: userModel.init(params:params))
+        if status{
+            ActivityLoader.shared.showloader(view: view)
+            self.loginModel.LoginIn { (result,success) in
+                if success == true{
+                    ActivityLoader.shared.hideloader()
+                    self.goTomarket()
+                }
+            }
+        }else{
+            showToast(message:error, font: .systemFont(ofSize: 15.0))
+        }
+    }
+    
+    @IBAction func btnTryNow(_ sender: UIButton) {
+        self.goToEmployePage()
+    }
+    
     @IBAction func btnSelectSegmentClick(_ sender: UISegmentedControl) {
         if seg.selectedSegmentIndex == 0 {// english
             self.languageLabel(strlen: "en")
@@ -137,38 +160,21 @@ class LoginViewController: BaseViewController{
         lblHavAcc.text = "NoAcc".localizableString(loc: strlen)
         btnCopyRight.text = "copyRight".localizableString(loc: strlen)
         btnForgotPassword.setTitle("ForgotPassword".localizableString(loc: strlen), for:.normal)
-       
+        
     }
-    
-    @IBAction func btnloginValid(_ sender: UIButton) {
-       
-        params["userEmail"] = txtEmail.text
-        params["password"] = txtPassword.text
-        let (status,error) =  loginModel.txtHandler(model: userModel.init(params:params))
-        if status{
-            ActivityLoader.shared.showloader(view: view)
-            self.loginModel.LoginIn { (result,success) in
-                if success == true{
-                    ActivityLoader.shared.hideloader()
-                    self.goTomarket()
-                }
-            }
-        }else{
-            showToast(message:error, font: .systemFont(ofSize: 15.0))
-        }
-    }
-    
-    @IBAction func btnTryNow(_ sender: UIButton) {
-        self.goToEmployePage()
-    }
+}
+
+
+///extension for socket related data
+extension LoginViewController{
     
     func socketsetup(){
         Socketservice.shared().SocketDataAPI() { (result,status)  in
             DispatchQueue.main.async {
                 if status == "Closed"{
-                  print("closed")
+                    print("closed")
                 }else if status == "Open"{
-                  print("opened")
+                    print("opened")
                 }
                 self.marketModel = result
                 if let market = self.marketModel?.quotesStream?[0] {
@@ -179,8 +185,8 @@ class LoginViewController: BaseViewController{
                 if result?.quotesStream != nil{
                     self.marketModel?.quotesStream = result?.quotesStream
                 }
-               if result?.reason == "VALID"{
-                     self.socketSecondRequest()
+                if result?.reason == "VALID"{
+                    self.socketSecondRequest()
                 }
             }
         }
@@ -194,18 +200,23 @@ class LoginViewController: BaseViewController{
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted);
             if let string = String(data: jsonData, encoding: String.Encoding.utf8){
-               // let one = "{\n  \"RTAccountInfo\" : 1,\n  \"Version\" : 1.5,\n  \"Password\" : \"abc123\",\n  \"msgtype\" : 41,\n  \"UserName\" : \"13164\"\n}
+                // let one = "{\n  \"RTAccountInfo\" : 1,\n  \"Version\" : 1.5,\n  \"Password\" : \"abc123\",\n  \"msgtype\" : 41,\n  \"UserName\" : \"13164\"\n}
+                
                 Socketservice.shared().ws.send(req)
                 //saveSocketLog()
-
+                
             } else {
-                //print("Couldn't create json string");
+                print("Couldn't create json string");
             }
         } catch let error {
             print("Couldn't create json data: \(error)");
         }
     }
-   
-  
+    
 }
+
+
+
+
+
 

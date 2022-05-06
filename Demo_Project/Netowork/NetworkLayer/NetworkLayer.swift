@@ -77,34 +77,5 @@ class NetworkLayer {
         }
     }
     
-    
-    // for the  Get request
-    func getApiRESULT<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler:@escaping(_ result: T)-> Void,failure: @escaping (String)->Void)
-    {
-        
-        var urlRequest = URLRequest(url: requestUrl)
-        urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
-        urlRequest.addValue(Constants.kToken, forHTTPHeaderField: "Authorization")
-        if Utility.shared.isInternetAvailable() {
-            URLSession.shared.dataTask(with: requestUrl) { (responseData, httpUrlResponse, error) in
-                if(error == nil && responseData != nil && responseData?.count != 0)
-                {
-                    //parse the responseData here
-                    let decoder = JSONDecoder()
-                    
-                    do {
-                        let result = try decoder.decode(T.self, from: responseData!)
-                        _=completionHandler(result)
-                    }
-                    catch let error{
-                        debugPrint("error occured while decoding = \(error.localizedDescription)")
-                    }
-                }
-                
-            }.resume()
-        }else{
-            print("The internet connection appears to be offline.")
-        }
-    }
-    
+
 }
