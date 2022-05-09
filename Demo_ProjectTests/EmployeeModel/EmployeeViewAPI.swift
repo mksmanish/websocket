@@ -24,7 +24,7 @@ class EmployeeViewAPI: XCTestCase {
         
         let expectation = self.expectation(description: "employeeApI")
         let employeeAPI = EmployeeViewModel()
-        employeeAPI.fetchEmployees { (success) in
+        employeeAPI.fetchEmployees { (success,error)  in
             XCTAssertTrue(success)
             expectation.fulfill()
         }
