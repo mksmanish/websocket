@@ -1,6 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Demo_Project/Pods-Demo_Project-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/CarbonKit/CarbonKit.framework
 ${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
@@ -8,3 +7,4 @@ ${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework
 ${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework
 ${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework

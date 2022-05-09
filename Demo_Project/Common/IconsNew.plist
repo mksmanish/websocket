@@ -8,5 +8,13 @@
 	<string>logo</string>
 	<key>main_logo</key>
 	<string>main_logo</string>
+	<key>pip</key>
+	<string>pip</string>
+	<key>seamless</key>
+	<string>seamless</string>
+	<key>smartReco</key>
+	<string>smartReco</string>
+	<key>track</key>
+	<string>track</string>
 </dict>
 </plist>

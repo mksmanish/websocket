@@ -13,6 +13,6 @@ target 'Demo_Project' do
   pod 'IQKeyboardManagerSwift'
   pod 'SVGKit'
   pod 'SwiftWebSocket'
-  pod 'CarbonKit'
+  pod 'iCarousel'
   
 end

@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (5.0.5)
-  - CarbonKit (2.3.1)
   - CocoaLumberjack (3.7.4):
     - CocoaLumberjack/Core (= 3.7.4)
   - CocoaLumberjack/Core (3.7.4)
+  - iCarousel (1.8.3)
   - IQKeyboardManagerSwift (6.5.9)
   - ReachabilitySwift (5.0.0)
   - SkyFloatingLabelTextField (4.0.0)
@@ -14,7 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
-  - CarbonKit
+  - iCarousel
   - IQKeyboardManagerSwift
   - ReachabilitySwift
   - SkyFloatingLabelTextField
@@ -25,8 +25,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CarbonKit
     - CocoaLumberjack
+    - iCarousel
     - IQKeyboardManagerSwift
     - ReachabilitySwift
     - SkyFloatingLabelTextField
@@ -36,8 +36,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
-  CarbonKit: b60e24dbdb47179990d5e074efa87ab819c8de98
   CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
@@ -45,6 +45,6 @@ SPEC CHECKSUMS:
   SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 4df987691183d669ed920383f4f9b00a96be5f82
+PODFILE CHECKSUM: 57cc145dfcefe8a7d95af4fcc643c55117d5e3e9
 
 COCOAPODS: 1.11.2

@@ -17,7 +17,10 @@ class DMSVG: NSObject {
     let main_logo = "main_logo"
     let logo = "logo"
     let pine = "pine"
-    
+    let pip = "pip"
+    let seamless = "seamless"
+    let smartReco = "smartReco"
+    let track = "track"
     
 }
 

@@ -132,7 +132,7 @@ class LoginViewController: BaseViewController{
     }
     
     @IBAction func btnTryNow(_ sender: UIButton) {
-        self.goToEmployePage()
+        self.goToPageController()
     }
     
     @IBAction func btnSelectSegmentClick(_ sender: UISegmentedControl) {

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CarbonKit
 
 /// This class is used for watchWatch and its functionalities
 class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,cellclicked{

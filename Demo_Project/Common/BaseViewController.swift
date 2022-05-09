@@ -17,6 +17,15 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func goToPageController() {
+      
+            let str = UIStoryboard(name: "PageView", bundle: nil)
+            let vc = str.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+      
+    }
+    
     func goToEmployePage(){
         
         DispatchQueue.main.async {

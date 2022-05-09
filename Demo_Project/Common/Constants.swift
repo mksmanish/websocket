@@ -36,6 +36,17 @@ class Constants: NSObject {
     public static let Sell = "Sell"
     public static let Buy = "Buy"
     
+    //pageViewController
+    public static let Personalized_investment_portfolio = "Personalized investment portfolio"
+    public static let Personalised_text = "We select the right portfolio to fit your profile and align with your goals."
+    public static let Seamless_payment_to_fund_your_investments = "Seamless payment to fund your investments"
+    public static let Seamless_text = "Link your bank account and fund your investments - simply and seamlessly."
+    public static let Smart_recommendations_to_get_it_right = "Smart recommendations to get it right"
+    public static let Smart_text =  "Grow your money effectively with smart recommendations to help you reach your goal."
+    public static let Track_movements_anytime_anywhere = "Track movements anytime,anywhere"
+    public static let Track_text = "Your portfolio performance is readily available so you can track it on the go."
+    public static let Next = "Next"
+    
 
 }
 
