@@ -20,24 +20,31 @@ class EmployeeViewController: UIViewController ,UITableViewDelegate,UITableViewD
         self.tblViewEmp.register(UINib(nibName: ViewIdentifiers.EmployeeCell, bundle: nil), forCellReuseIdentifier: ViewIdentifiers.EmployeeCell)
         self.tblViewEmp.dataSource = self
         self.tblViewEmp.delegate = self
-        setupbinders()
-        fetchEmployee()
         
-      
+        fetchEmployee()
+        setupbinders()
+        
+        
     }
     func fetchEmployee() {
+        
         ActivityLoader.shared.showloader(view: view)
-        viewModel.fetchEmployees { success in
+        viewModel.fetchEmployees { [weak self]  (success,error)  in
             if success == true{
-                self.tblViewEmp.reloadData()
                 ActivityLoader.shared.hideloader()
+                DispatchQueue.main.async {
+                    self?.tblViewEmp.reloadData()
+                }
+            }else{
+                self?.showToast(message: error, font: .systemFont(ofSize: 15.0))
             }
-           
+            
         }
     }
     
     func setupbinders() {
         self.refresh?.beginRefreshing()
+        
         viewModel.employees.bind { [weak self] (_) in
             DispatchQueue.main.async {
                 self?.tblViewEmp.reloadData()
