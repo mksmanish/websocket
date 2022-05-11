@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 class MarketWatchModel {
     let accountId: Int?
     let userName: String?

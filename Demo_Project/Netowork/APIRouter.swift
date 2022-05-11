@@ -15,6 +15,7 @@ enum APIRouter: URLRequestConvertible {
     case companydata
     case accountsdata
     case employeedata
+    case getFavoutitesData
     
     
     // MARK: - HTTPMethod
@@ -23,6 +24,8 @@ enum APIRouter: URLRequestConvertible {
         case .login:
             return .post
         case .companydata,.accountsdata,.employeedata:
+            return .get
+        case .getFavoutitesData:
             return .get
             
         }
@@ -39,6 +42,8 @@ enum APIRouter: URLRequestConvertible {
             return "/user/api/v1/users/accounts"
         case .employeedata:
             return "/v2/users"
+        case .getFavoutitesData:
+            return "/account-settings/api/v1/workspace/all/13164"
         }
     }
     
@@ -52,6 +57,8 @@ enum APIRouter: URLRequestConvertible {
         case .accountsdata:
             return nil
         case .employeedata:
+            return nil
+        case .getFavoutitesData:
             return nil
             
         }
@@ -75,9 +82,11 @@ enum APIRouter: URLRequestConvertible {
         
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        print(urlRequest)
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
+       
         
         // Parameters
         if let parameters = parameters {
@@ -92,19 +101,21 @@ enum APIRouter: URLRequestConvertible {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-        
+        let token = UserDefaults.standard.string(forKey: "kToken")
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         
         switch self {
         case .login(_):
-            urlRequest.setValue(Constants.kToken, forHTTPHeaderField:  HTTPHeaderField.Authorization.rawValue)
+            urlRequest.setValue(token, forHTTPHeaderField:  HTTPHeaderField.Authorization.rawValue)
         case .companydata:
             print("Response")
         case .accountsdata:
-            urlRequest.setValue(Constants.kToken, forHTTPHeaderField: HTTPHeaderField.Authorization.rawValue)
+            urlRequest.setValue(token, forHTTPHeaderField: HTTPHeaderField.Authorization.rawValue)
         case .employeedata:
-            urlRequest.setValue(Constants.kToken, forHTTPHeaderField: HTTPHeaderField.Authorization.rawValue)
+            urlRequest.setValue(token, forHTTPHeaderField: HTTPHeaderField.Authorization.rawValue)
+        case .getFavoutitesData:
+            urlRequest.setValue(token, forHTTPHeaderField: HTTPHeaderField.Authorization.rawValue)
         default:
             urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         }

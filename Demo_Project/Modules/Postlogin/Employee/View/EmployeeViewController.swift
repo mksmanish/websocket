@@ -63,7 +63,7 @@ class EmployeeViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblViewEmp.dequeueReusableCell(withIdentifier: ViewIdentifiers.EmployeeCell, for: indexPath) as! EmployeeCell
-        cell.employeeValue = viewModel.employees.value[indexPath.row]
+         cell.employeeValue = viewModel.employees.value[indexPath.row]
         return cell
         
     }

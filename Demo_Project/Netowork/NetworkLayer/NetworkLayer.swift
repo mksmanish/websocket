@@ -14,6 +14,7 @@ class NetworkLayer {
     func getApiData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler:@escaping(_ result: T)-> Void)
     {
         var urlRequest = URLRequest(url: requestUrl)
+        
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
         urlRequest.addValue(Constants.kToken, forHTTPHeaderField: "Authorization")
         if Utility.shared.isInternetAvailable() {

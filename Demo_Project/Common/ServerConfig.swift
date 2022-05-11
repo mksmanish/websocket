@@ -8,7 +8,7 @@
 import Foundation
 
 enum BaseUrl: String {
-    case local = "https://local.com"
+    case local = "https://nxcloud.tradesocio.com"
     case QA = "https://gorest.co.in"
     case Prod = "https://prod.com"
     case UAT = "https://uat.com"

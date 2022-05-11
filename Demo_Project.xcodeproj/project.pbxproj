@@ -73,6 +73,7 @@
 		8E720778280584B100BA3FBE /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E720777280584B100BA3FBE /* ToastMessage.swift */; };
 		8E72077C2806D95800BA3FBE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E72077E2806D95800BA3FBE /* Login.storyboard */; };
 		8E72078B2806DE7000BA3FBE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E72078D2806DE7000BA3FBE /* Localizable.strings */; };
+		8E726E9A282B8B0D009C9DDE /* FavouritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E726E99282B8B0D009C9DDE /* FavouritesModel.swift */; };
 		8EAC2D27281E89F2009CFBC9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC2D26281E89F2009CFBC9 /* BaseViewController.swift */; };
 		8EAE415628043379002EAC6D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAE415528043379002EAC6D /* ThemeManager.swift */; };
 		8EC686BF27FFC43800EAFBBA /* main_logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8EC686BE27FFC43800EAFBBA /* main_logo.svg */; };
@@ -204,6 +205,7 @@
 		8E72078E2806DE7600BA3FBE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8E72078F2806DE7700BA3FBE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8E7207902806DE7900BA3FBE /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E726E99282B8B0D009C9DDE /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
 		8EAC2D26281E89F2009CFBC9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8EAE415528043379002EAC6D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		8EC686BE27FFC43800EAFBBA /* main_logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_logo.svg; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED081EB281A24A300E935E8 /* MarketWatchModel.swift */,
+				8E726E99282B8B0D009C9DDE /* FavouritesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				8E50D0CC27FDEA99007F9621 /* NetworkLayer.swift in Sources */,
 				8E029AA328163491009F5733 /* TestViewModel.swift in Sources */,
 				8E50D0B227FD659D007F9621 /* Reachability.swift in Sources */,
+				8E726E9A282B8B0D009C9DDE /* FavouritesModel.swift in Sources */,
 				8E25103427FC42A100501F45 /* FontAdv.swift in Sources */,
 				8E50D0C827FD948A007F9621 /* ErrorHandler.swift in Sources */,
 				8E3B42182823F85F00236E94 /* UserModel.swift in Sources */,

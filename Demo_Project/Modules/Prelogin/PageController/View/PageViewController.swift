@@ -79,6 +79,11 @@ class PageViewController: BaseViewController,iCarouselDelegate ,iCarouselDataSou
                 self.btnNext.isHidden = false
                 self.btnNextCircular.isHidden = true
             }
+        }else{
+            DispatchQueue.main.async {
+                self.btnNext.isHidden = true
+                self.btnNextCircular.isHidden = false
+            }
         }
         
     }

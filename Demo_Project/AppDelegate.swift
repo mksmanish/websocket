@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ServerConfig.shared.serverSetupConfig()
         IQKeyboardManager.shared.enable = true
         window?.overrideUserInterfaceStyle = .light
+     //   window?.rootViewController = LoginViewController()
         ThemeManager.applyTheme(theme: .theme1)
      //   Reachable.shared.startMonitoring()
         

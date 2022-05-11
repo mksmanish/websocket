@@ -22,16 +22,13 @@ class APIClient {
     /// - Returns: response for the request
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void,failure: @escaping (String)->Void) -> DataRequest  {
         let response = AF.request(route)
-        
         if  Utility.shared.isInternetAvailable() {
             return response
                 .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
                     if response.response?.statusCode == 200 {
                         if let data = response.data {
                             do {
-     
                                 debugPrint("response::::",response.data!)
-                           
                                 let customError = try decoder.decode(CustomError.self, from: data)
                                 if let code = customError.code {
                                     if code != "00" {
@@ -97,6 +94,10 @@ class APIClient {
     
     static func employeedata(completion:@escaping (AFResult<[EmployeeModel]>)->Void,failure: @escaping (String)->Void){
         performRequest(route: APIRouter.employeedata, completion: completion, failure: failure)
+    }
+    
+    static func getfavouriteData(completion:@escaping (AFResult<FavouitesModel>)->Void,failure: @escaping (String)->Void){
+        performRequest(route: APIRouter.getFavoutitesData, completion: completion, failure: failure)
     }
     
     

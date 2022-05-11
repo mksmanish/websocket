@@ -38,7 +38,6 @@ final class LoginViewModel {
         do{
             let encodeData =  try JSONEncoder().encode(request)
             NetworkLayer.shared.postApiData(requestUrl: url!, requestBody: encodeData, parseClassName: SignIn.self) { result in
-                print(result.message ?? "")
                 UserDefaults.standard.set(result.token, forKey: "kToken")
                 complication(result,true)
             }

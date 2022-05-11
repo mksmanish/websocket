@@ -16,12 +16,27 @@ class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITable
     
     //MARK:- Vraible Declaration
     var marketValues = [QuotesStream]()
+    let marketWatchViewModel = MarketWatchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblViw.register(UINib(nibName: CellIdentifiers.marketWatchCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.marketWatchCell)
         self.tblViw.dataSource = self
         self.tblViw.delegate = self
+        getFavouriteData()
+    }
+    
+    func getFavouriteData(){
+      
+        marketWatchViewModel.getFavouritesAPI {(favouriteData, error) in
+            if error == ""{
+                print(favouriteData.data?[0].favSymbols ?? "")
+            }else{
+                print(self.marketWatchViewModel.errormsg.value)
+            }
+            
+        }
+        
     }
     
     
