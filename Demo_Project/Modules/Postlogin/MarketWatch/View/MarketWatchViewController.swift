@@ -78,6 +78,7 @@ class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITable
         alert.addAction(UIAlertAction(title: Constants.Confirm,
                                       style: UIAlertAction.Style.default,
                                       handler: {(_: UIAlertAction!) in
+        
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -92,6 +93,7 @@ class MarketWatchViewController: UIViewController ,UITableViewDataSource,UITable
                                       style: UIAlertAction.Style.default,
                                       handler: {(_: UIAlertAction!) in
             self.navigationController?.popViewController(animated: true)
+            self.marketValues.removeAll()
         }))
         self.present(alert, animated: true, completion: nil)
         
@@ -121,9 +123,7 @@ class marketWatchCell:UITableViewCell{
     
     @IBAction func btnAddFavourites(_ sender: UIButton) {
         delegate?.buttontapped(number: sender.tag)
-        
     }
-    
     
     
 }

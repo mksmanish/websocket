@@ -194,23 +194,24 @@ extension LoginViewController{
     }
     
     func socketSecondRequest(){
-        let json: [String:Any] = ["msgtype": 140, "Account": 1]
-        NSLog("##### GC1 second request -------> \(json)")
-        let req = "{\n  \"ConnID\" : 118,\n  \"msgtype\" : 17,\n  \"Symbol\" : [\n    {\n      \"Name\" : \"JRS\"\n    },\n    {\n      \"Name\" : \"AMAZON\"\n    },\n    {\n      \"Name\" : \"VYM\"\n    },\n    {\n      \"Name\" : \"AUDCAD\"\n    },\n    {\n      \"Name\" : \"LNG\"\n    },\n    {\n      \"Name\" : \"INDA\"\n    },\n    {\n      \"Name\" : \"STPZ\"\n    },\n    {\n      \"Name\" : \"JRO\"\n    },\n    {\n      \"Name\" : \"DIA\"\n    }\n  ],\n  \"NoOfSymbols\" : 9\n}"
+        
+        let uniqueSymbolArray:[[String:Any]] = [["Name": "AMAZON"], ["Name": "VYM"], ["Name": "AUDCAD"], ["Name": "LNG"], ["Name": "INDA"], ["Name": "JRO"], ["Name": "DIA"], ["Name": "SCZ"], ["Name": "STPZ"], ["Name": "NEAR"], ["Name": "JRS"]]
+        let noOfSymbols = 11
+        let connID = 118
+        let json: [String:Any] = ["Symbol":uniqueSymbolArray,"ConnID":connID,"NoOfSymbols":noOfSymbols,"msgtype":17]
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted);
             if let string = String(data: jsonData, encoding: String.Encoding.utf8){
-                // let one = "{\n  \"RTAccountInfo\" : 1,\n  \"Version\" : 1.5,\n  \"Password\" : \"abc123\",\n  \"msgtype\" : 41,\n  \"UserName\" : \"13164\"\n}
-                
-                Socketservice.shared().ws.send(req)
+                Socketservice.shared().ws.send(string)
                 //saveSocketLog()
                 
             } else {
-                print("Couldn't create json string");
+                //print("Couldn't create json string");
             }
         } catch let error {
             print("Couldn't create json data: \(error)");
         }
+
     }
     
 }

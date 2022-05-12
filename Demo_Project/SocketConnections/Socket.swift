@@ -29,9 +29,9 @@ class Socketservice{
         var socketGC1Model : MarketWatchModel?
         
         ws = WebSocket("wss://win-ntcloud.tradesocio.com:1611/13164_1651140161_iOS") //socket url
-        
+      
         let send : ()->() = {
-            let msg = "{\n  \"RTAccountInfo\" : 1,\n  \"Version\" : 1.5,\n  \"Password\" : \"abc123\",\n  \"msgtype\" : 41,\n  \"UserName\" : \"13164\"\n}"
+            let msg = "{\n  \"UserName\" : \"13164\",\n  \"msgtype\" : 41,\n  \"RTAccountInfo\" : 1,\n  \"Password\" : \"abc123\",\n  \"Version\" : 1.5\n}"
             self.ws.send(msg)
         }
         ws.event.open = {
@@ -57,6 +57,7 @@ class Socketservice{
                     DispatchQueue.main.async {
                         
                         if let jsonDic = json as? Dictionary<String,Any>{
+                            print(jsonDic)
                             socketGC1Model = MarketWatchModel(jsonDic)
                             if socketGC1Model?.reason == "VALID"{
                                 print(socketGC1Model?.userName ?? 0)

@@ -50,11 +50,10 @@ class QuotesStream {
 }
 
 class QuotesStreamDetails {
-    let askPrice: Double?
+    var askPrice: Double?
     let askQuantity: Int?
-    let bidPrice: Double?
-    let bidQuantity: Int?
-    
+    var bidPrice: Double?
+    var bidQuantity: Int?
     init(_ dict: Dictionary<String,Any>) {
         self.askPrice = dict.getDoubleValueForKey("AskPrice")
         self.askQuantity = dict.getIntValueForKey("AskQuantity")
